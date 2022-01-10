@@ -6,10 +6,6 @@ import (
 	"testing"
 )
 
-func Test_GenerateAutherizationCode(t *testing.T) {
-	assert.Equal(t, generateAutherizationCode("_WSXUserSTG_OAUTH_"), "G-xxlrnRQeJF5CQROvBynVpiM6tECxF2hisAAAEu")
-}
-
 func Test_GetAccessToken_With_Valid_AuthorizationCode(t *testing.T) {
 	autorizationCode := "G-xxlrnRQeJF5CQROvBynVpiM6tECxF2hisAAAEu"
 	token, err := getAccessToken(autorizationCode)

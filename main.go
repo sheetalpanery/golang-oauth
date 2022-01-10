@@ -1,14 +1,22 @@
 package main
 
-import "fmt"
-"
-"
+import (
+	"fmt"
+	"net/http"
+)
 
 func main() {
-	cfg := config.localconfig
-	err = config.LoadConfig(&cfg, "./config/")
-	if err != nil {
-		panic(fmt.Sprintf("Could not Load Config %v", err))
-	}
-	httpServer := api.RestAPIStartServer("localhost", "9092", cfg.ContextPath)
+
+	http.HandleFunc("/generateAccessToken", generateAccessToken)
+
+	http.ListenAndServe(":8090", nil)
+
+}
+
+func generateAccessToken(w http.ResponseWriter, req *http.Request) {
+
+	code := req.URL.Query()["code"]
+	fmt.Println("code:", code)
+	getAccessToken
+
 }

@@ -9,9 +9,10 @@ type oauthRequest struct {
 	redirect_uri  string
 }
 
-func getAccessToken(code string) (token string, err error) {
+func GetAccessToken(code string) (token string, err error) {
 
 	fmt.Println("code in getAccessToken", code)
+	
 	return "dummyToken", nil
 
 }

@@ -1,4 +1,4 @@
-module golang-oauth-library
+module github.com/sheetalpanery/golang-oauth-library
 
 go 1.17
 
